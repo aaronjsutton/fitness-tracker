@@ -21,7 +21,7 @@ package edu.pitt.ajs377.fitness.activity;
  *
  * @author Aaron Sutton
  */
-abstract class Activity {
+public abstract class Activity {
   private String title;
   private String notes;
   private int duration;
