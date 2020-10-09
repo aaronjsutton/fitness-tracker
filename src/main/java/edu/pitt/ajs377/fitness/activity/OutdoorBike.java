@@ -20,6 +20,14 @@ public class OutdoorBike extends Bike {
 
   private String location;
 
+  /** 
+   * Create a new OutdoorBike that took place at a given location. 
+   */
+  public OutdoorBike(String location) {
+    super();
+    this.location = location;
+  }
+
   public String getLocation() {
     return location;
   }

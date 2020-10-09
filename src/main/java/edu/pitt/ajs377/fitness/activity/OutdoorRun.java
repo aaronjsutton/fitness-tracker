@@ -20,6 +20,14 @@ public class OutdoorRun extends Run {
 
   private String location;
 
+  /** 
+   * Create a new OutdoorRun that took place at a given location. 
+   */
+  public OutdoorRun(String location) {
+    super();
+    this.location = location;
+  }
+
   public String getLocation() {
     return location;
   }
