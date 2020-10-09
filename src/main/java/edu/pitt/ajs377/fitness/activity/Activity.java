@@ -21,7 +21,7 @@ package edu.pitt.ajs377.fitness.activity;
  *
  * @author Aaron Sutton
  */
-public abstract class Activity {
+abstract class Activity {
   private String title;
   private String notes;
   private int duration;
@@ -35,6 +35,26 @@ public abstract class Activity {
 
   public Activity() {
     title = getGenericTitle();
+    notes = "";
+  }
+
+  public Activity(String title) {
+    this.title = title;
+    notes = "";
+  }
+
+  public Activity(int duration, int calories) {
+    title = getGenericTitle();
+    notes = "";
+    this.duration = duration; 
+    this.calories = calories;
+  }
+
+  public Activity(String title, String notes, int duration, int calories) {
+    this.title = title; 
+    this.notes = notes; 
+    this.duration = duration; 
+    this.calories = calories;
   }
 
   /**
@@ -45,7 +65,7 @@ public abstract class Activity {
    *
    * @return the current title `String`.
    */
-  public String getTitle() {
+  public final String getTitle() {
     return title;
   }
 
@@ -54,13 +74,13 @@ public abstract class Activity {
    *
    * Titles cannot be blank, and must be no longer that {@value #MAX_TITLE_CHARS} characters long.
    * This prevents titles from being too long. For longer descriptions, use the activity's notes.
-   * 
    *
-   * @param title The new title. If the title is null, an empty string, 
+   *
+   * @param title The new title. If the title is null, an empty string,
    *              or too long, the activity generic title value is used.
    *
    */
-  public void setTitle(String title) {
+  public final void setTitle(String title) {
     if (
       title == null || title.isEmpty() || title.length() > MAX_TITLE_CHARS
     ) this.title = getGenericTitle(); else this.title = title;
@@ -73,7 +93,7 @@ public abstract class Activity {
    *
    * @return the plaintext activity notes
    */
-  public String getNotes() {
+  public final String getNotes() {
     return notes;
   }
 
@@ -81,19 +101,18 @@ public abstract class Activity {
    * Update or remove notes from the activity.
    *
    * Notes can be empty, and are limited to {@value #MAX_NOTES_CHARS}
-   * characters in length. 
+   * characters in length.
    *
-   * @param notes The new notes text. If it is null or empty, 
-   *              the notes are set to an empty `String`. If the new 
-   *              notes `String` is too long, it is discarded 
-   *              and the previous notes `String` is kept. 
+   * @param notes The new notes text. If it is null or empty,
+   *              the notes are set to an empty `String`. If the new
+   *              notes `String` is too long, it is discarded
+   *              and the previous notes `String` is kept.
    *
    */
-  public void setNotes(String notes) {
-    if (notes.length() <= MAX_NOTES_CHARS)
-      this.notes = notes;
-    else if (notes == null)
-      this.notes = "";
+  public final void setNotes(String notes) {
+    if (notes.length() <= MAX_NOTES_CHARS) this.notes = notes; else if (
+      notes == null
+    ) this.notes = "";
   }
 
   /**
@@ -112,10 +131,9 @@ public abstract class Activity {
    *                 cannot be a negative.
    */
   public void setDuration(int duration) {
-    if (duration < 0)
-      throw new IllegalArgumentException("** Duration cannot be less than 0. **");
-    else
-      this.duration = duration;
+    if (duration < 0) throw new IllegalArgumentException(
+      "** Duration cannot be less than 0. **"
+    ); else this.duration = duration;
   }
 
   /**
@@ -128,17 +146,16 @@ public abstract class Activity {
   }
 
   /**
-   *
+   * Update calories, measured in kcals, burned during the activity.
    *
    * @param calories the calories in kcals.
    *                 cannot be negative.
    *
    */
   public void setCalories(double calories) {
-    if (calories < 0)
-      throw new IllegalArgumentException("** Calories cannot be less than 0. **");
-    else
-      this.calories = calories;
+    if (calories < 0) throw new IllegalArgumentException(
+      "** Calories cannot be less than 0. **"
+    ); else this.calories = calories;
   }
 
   protected abstract String getGenericTitle();
