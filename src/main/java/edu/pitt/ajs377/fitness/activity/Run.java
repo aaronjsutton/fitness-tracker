@@ -55,8 +55,8 @@ public class Run extends Activity {
       "== %s ==\n" +
       "Notes: %s\n" +
       "Duration: %,d min\n" +
-      "Calories burned: %,f kcals\n",
-      "Distance ran: %,f miles\n",
+      "Calories burned: %,2f kcals\n" +
+      "Distance ran: %,2f miles\n",
       getTitle(),
       getNotes(),
       getDuration(),

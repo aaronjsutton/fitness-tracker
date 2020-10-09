@@ -47,7 +47,7 @@ public class Swim extends Activity {
       "== %s ==\n" +
       "Notes: %s\n" +
       "Duration: %,d min\n" +
-      "Calories burned: %,f kcals\n",
+      "Calories burned: %,f kcals\n" +
       "Distance swam: %,f miles\n",
       getTitle(),
       getNotes(),

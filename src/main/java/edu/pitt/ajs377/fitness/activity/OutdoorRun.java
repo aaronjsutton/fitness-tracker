@@ -48,7 +48,7 @@ public class OutdoorRun extends Run {
       "Notes: %s\n" +
       "Location: %s\n" +
       "Duration: %,d min\n" +
-      "Calories burned: %,f kcals\n",
+      "Calories burned: %,f kcals\n" +
       "Distance ran: %,f miles\n",
       getTitle(),
       getNotes(),
