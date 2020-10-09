@@ -17,6 +17,11 @@ public class Run extends Activity {
 
   private double distance;
 
+  /** Create a new run with the activity's generic title. */
+  public Run() {
+    super();
+  }
+
   /** Create a new run with a custom title. */
   public Run(String title) {
     super(title);

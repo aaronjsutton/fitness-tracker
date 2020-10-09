@@ -38,7 +38,7 @@ public class Swim extends Activity {
 
   @Override
   public String getGenericTitle() {
-    return "Run";
+    return "Swim";
   }
 
   @Override

@@ -16,6 +16,14 @@ package edu.pitt.ajs377.fitness.activity;
 public class Bike extends Activity {
   private double distance;
 
+  public Bike() {
+    super();
+  }
+
+  public Bike(String title) {
+    super(title);
+  }
+
   /** The distance, in miles, biked. */
   public double getDistance() {
     return distance;
@@ -35,7 +43,7 @@ public class Bike extends Activity {
 
   @Override
   public String getGenericTitle() {
-    return "Run";
+    return "Bike";
   }
 
   @Override
