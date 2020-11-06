@@ -33,7 +33,11 @@
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.0.0</version>
           <configuration>
-            <mainClass>edu.pitt.ajs377.fitness.ActivityDemo</mainClass>
+            <mainClass>edu.pitt.ajs377.fitness.FitnessTrackerMain</mainClass>
+            <arguments>
+              <argument>data/activities.txt</argument>
+              <argument>data/steps.txt</argument>
+            </arguments>
           </configuration>
           <executions>
             <execution>
