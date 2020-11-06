@@ -33,8 +33,5 @@ public class ActivityDemo {
 
     System.out.println(run);
     System.out.println(bike);
-
-    ActiveDay today = new ActiveDay(2, run, bike);
-    System.out.println(today); 
   }
 }
