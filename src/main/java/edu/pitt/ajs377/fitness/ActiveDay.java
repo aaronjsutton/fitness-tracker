@@ -10,6 +10,7 @@ package edu.pitt.ajs377.fitness;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import edu.pitt.ajs377.fitness.activity.*;
 
@@ -43,6 +44,15 @@ public class ActiveDay extends Day {
   public ActiveDay(int dayOfYear, List<Activity> acts) {
     super(dayOfYear);
     activities = acts;
+  }
+
+  /**
+   * Varargs version of the constructor, allows backwards compatibilty with
+   * the previous combination constructors.
+   */
+  public ActiveDay(int dayOfYear, Activity ... acts) {
+    super(dayOfYear);
+    activities = Arrays.asList(acts);
   }
 
   public double getTotalCalories() {
