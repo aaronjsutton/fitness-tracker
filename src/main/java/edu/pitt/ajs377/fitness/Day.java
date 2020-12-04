@@ -3,7 +3,7 @@
  * ajs377@pitt.edu
  * Final Project: Fitness Tracker
  *
- * Day.java - An abstract class that defines functionality 
+ * Day.java - An abstract class that defines functionality
  * for every class using calendar dayOfYear logic.
  *
  */
@@ -33,9 +33,10 @@ public abstract class Day {
    * @param dayOfYear the calendar dayOfYear from 1-365.
    */
   public void setDayOfYear(int dayOfYear) {
-    if (dayOfYear < MIN_CAL_DAY || dayOfYear > MAX_CAL_DAY)
-      throw new IllegalArgumentException("** Invalid calendar dayOfYear " + dayOfYear + " **");
-    else 
-      this.dayOfYear = dayOfYear;
+    if (
+      dayOfYear < MIN_CAL_DAY || dayOfYear > MAX_CAL_DAY
+    ) throw new IllegalArgumentException(
+      "** Invalid calendar dayOfYear " + dayOfYear + " **"
+    ); else this.dayOfYear = dayOfYear;
   }
 }

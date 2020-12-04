@@ -5,34 +5,32 @@
  * ActiveDayTest.java - Unit tests for the ActiveDay class.
  */
 
-import org.junit.Test;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import edu.pitt.ajs377.fitness.ActiveDay;
 import edu.pitt.ajs377.fitness.activity.*;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertNotNull;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ActiveDayTest {
-
- private ActiveDay day;
+  private ActiveDay day;
 
   @Before
   public void setUp() {
-    Run r = new Run();
+    Run r = new Run(100100);
     r.setDuration(20);
     r.setCalories(200);
-    Bike b = new Bike();
+    Bike b = new Bike(100200);
     b.setDuration(40);
     b.setCalories(200);
     day = new ActiveDay(1, r, b);
   }
 
-  @Test 
+  @Test
   public void totalMinutes() {
     assertEquals(day.getTotalMinutes(), 60);
   }
@@ -50,21 +48,21 @@ public class ActiveDayTest {
 
   @Test
   public void constructor_BikeAndOutdoorBike() {
-    Bike b = new Bike();
-    OutdoorBike ob = new OutdoorBike("Oakland");
+    Bike b = new Bike(100);
+    OutdoorBike ob = new OutdoorBike(100, "Oakland");
     assertNotNull(new ActiveDay(1, b, ob));
   }
 
   @Test
   public void constructor_Run() {
-    Run r = new Run();
+    Run r = new Run(100);
     assertNotNull(new ActiveDay(1, r));
   }
 
   @Test
   public void constructor_RunBike() {
-    Run r = new Run();
-    Bike b = new Bike();
+    Run r = new Run(100);
+    Bike b = new Bike(100);
     assertNotNull(new ActiveDay(1, r, b));
   }
 
@@ -75,24 +73,24 @@ public class ActiveDayTest {
 
   @Test
   public void constructor_RunAndOutdoorRun() {
-    Run r = new Run();
-    OutdoorRun or = new OutdoorRun("home");
+    Run r = new Run(100);
+    OutdoorRun or = new OutdoorRun(100, "home");
     assertNotNull(new ActiveDay(1, r, or));
   }
 
   @Test
   public void constructor_RBS() {
-    Run r = new Run();
-    Bike b = new Bike();
-    Swim s = new Swim();
+    Run r = new Run(100);
+    Bike b = new Bike(100);
+    Swim s = new Swim(1600);
     assertNotNull(new ActiveDay(1, r, b, s));
   }
 
   @Test
   public void constructor_RBSO() {
-    Run r = new Run();
-    Bike b = new Bike();
-    Swim s = new Swim();
+    Run r = new Run(100);
+    Bike b = new Bike(100);
+    Swim s = new Swim(100);
     Other o = new Other();
     assertNotNull(new ActiveDay(1, r, b, s, o));
   }

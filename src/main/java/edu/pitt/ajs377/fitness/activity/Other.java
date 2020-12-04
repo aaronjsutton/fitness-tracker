@@ -10,7 +10,7 @@ package edu.pitt.ajs377.fitness.activity;
 
 /** * A generic, nondescript activity.
  *
- * Use this class for any activty which does not fall under 
+ * Use this class for any activty which does not fall under
  * any of the predefined categories.
  *
  * @author Aaron Sutton

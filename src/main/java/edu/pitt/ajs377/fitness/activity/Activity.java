@@ -46,14 +46,14 @@ public abstract class Activity {
   public Activity(int duration, int calories) {
     title = getGenericTitle();
     notes = "";
-    this.duration = duration; 
+    this.duration = duration;
     this.calories = calories;
   }
 
   public Activity(String title, String notes, int duration, int calories) {
-    this.title = title; 
-    this.notes = notes; 
-    this.duration = duration; 
+    this.title = title;
+    this.notes = notes;
+    this.duration = duration;
     this.calories = calories;
   }
 
@@ -81,9 +81,8 @@ public abstract class Activity {
    *
    */
   public final void setTitle(String title) {
-    if (
-      title == null || title.isEmpty() || title.length() > MAX_TITLE_CHARS
-    ) this.title = getGenericTitle(); else this.title = title;
+    if (title == null || title.isEmpty() || title.length() > MAX_TITLE_CHARS) this.title =
+      getGenericTitle(); else this.title = title;
   }
 
   /**

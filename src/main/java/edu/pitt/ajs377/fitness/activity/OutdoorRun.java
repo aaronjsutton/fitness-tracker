@@ -17,14 +17,13 @@ package edu.pitt.ajs377.fitness.activity;
  * @author Aaron Sutton
  */
 public class OutdoorRun extends Run {
-
   private String location;
 
-  /** 
-   * Create a new OutdoorRun that took place at a given location. 
+  /**
+   * Create a new OutdoorRun that took place at a given location.
    */
-  public OutdoorRun(String location) {
-    super();
+  public OutdoorRun(double distance, String location) {
+    super(distance);
     this.location = location;
   }
 

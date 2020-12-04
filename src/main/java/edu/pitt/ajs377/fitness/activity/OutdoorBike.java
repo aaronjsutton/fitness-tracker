@@ -17,14 +17,13 @@ package edu.pitt.ajs377.fitness.activity;
  * @author Aaron Sutton
  */
 public class OutdoorBike extends Bike {
-
   private String location;
 
-  /** 
-   * Create a new OutdoorBike that took place at a given location. 
+  /**
+   * Create a new OutdoorBike that took place at a given location.
    */
-  public OutdoorBike(String location) {
-    super();
+  public OutdoorBike(double distance, String location) {
+    super(distance);
     this.location = location;
   }
 

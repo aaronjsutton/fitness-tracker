@@ -8,12 +8,11 @@
 
 package edu.pitt.ajs377.fitness;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import edu.pitt.ajs377.fitness.activity.*;
+import java.util.ArrayList;
+import java.util.List;
 
-/** 
+/**
  * A record of steps during a single day.
  *
  * Associates a calendar day (an integer) with a number of steps
@@ -34,9 +33,8 @@ public class DailySteps extends Day {
   }
 
   public void setNumberOfSteps(int steps) {
-    if (steps < 0)
-      throw new IllegalArgumentException("** Steps cannot be negative.");
-    else
-      numberOfSteps = steps;
+    if (steps < 0) throw new IllegalArgumentException(
+      "** Steps cannot be negative."
+    ); else numberOfSteps = steps;
   }
 }

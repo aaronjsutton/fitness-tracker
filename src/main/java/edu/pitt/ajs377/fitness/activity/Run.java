@@ -14,12 +14,12 @@ package edu.pitt.ajs377.fitness.activity;
  * @author Aaron Sutton
  */
 public class Run extends Activity {
-
   private double distance;
 
   /** Create a new run with the activity's generic title. */
-  public Run() {
+  public Run(double distance) {
     super();
+    this.distance = distance;
   }
 
   /** Create a new run with a custom title. */
@@ -32,16 +32,15 @@ public class Run extends Activity {
     return distance;
   }
 
-  /** 
+  /**
    * Update the distance for this run.
    *
    * @param distance the distance in miles, cannot be less than 0.
    */
   public void setDistance(double distance) {
-    if (distance < 0)
-        throw new IllegalArgumentException("** Distance cannot be < 0. **");
-    else
-      this.distance = distance;
+    if (distance < 0) throw new IllegalArgumentException(
+      "** Distance cannot be < 0. **"
+    ); else this.distance = distance;
   }
 
   @Override
@@ -64,5 +63,4 @@ public class Run extends Activity {
       getDistance()
     );
   }
-
 }

@@ -14,8 +14,12 @@ package edu.pitt.ajs377.fitness.activity;
  * @author Aaron Sutton
  */
 public class Swim extends Activity {
-
   private double distance;
+
+  public Swim(double distance) {
+    super();
+    this.distance = distance;
+  }
 
   /**
    * The distance, in yards, swam.
@@ -30,10 +34,9 @@ public class Swim extends Activity {
    * @param distance the new distance in yards, cannot be less than 0.
    */
   public void setDistance(double distance) {
-    if (distance < 0)
-        throw new IllegalArgumentException("** Distance cannot be less than 0. **");
-    else
-      this.distance = distance;
+    if (distance < 0) throw new IllegalArgumentException(
+      "** Distance cannot be less than 0. **"
+    ); else this.distance = distance;
   }
 
   @Override

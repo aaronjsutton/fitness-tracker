@@ -16,8 +16,9 @@ package edu.pitt.ajs377.fitness.activity;
 public class Bike extends Activity {
   private double distance;
 
-  public Bike() {
+  public Bike(double distance) {
     super();
+    this.distance = distance;
   }
 
   public Bike(String title) {
@@ -29,16 +30,15 @@ public class Bike extends Activity {
     return distance;
   }
 
-  /** 
+  /**
    * Update the distance for this bike ride.
    *
    * @param distance the distance in miles, cannot be less than 0.
    */
   public void setDistance(double distance) {
-    if (distance < 0)
-        throw new IllegalArgumentException("** Distance cannot be < 0. **");
-    else
-      this.distance = distance;
+    if (distance < 0) throw new IllegalArgumentException(
+      "** Distance cannot be < 0. **"
+    ); else this.distance = distance;
   }
 
   @Override
@@ -52,7 +52,7 @@ public class Bike extends Activity {
       "== %s ==\n" +
       "Notes: %s\n" +
       "Duration: %,d min\n" +
-      "Calories burned: %,f kcals\n" + 
+      "Calories burned: %,f kcals\n" +
       "Distance biked: %,f miles\n",
       getTitle(),
       getNotes(),
